@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="ShaunBlog 我的博客||学习生活" />
+    <meta name="author" content="Shaun" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>ShaunBlog 我的博客||学习生活</title>
+    <!-- BOOTSTRAP CORE STYLE -->
+    <link href="/public/css/bootstrap-3.37.css" rel="stylesheet" />
+    <!-- FONT AWESOME ICON STYLE -->
+    <link href="/public/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="/public/css/style.css" rel="stylesheet" />
+    <!-- CORE JQUERY -->
+    <script src="/public/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/public/js/bootstrap-3.37.js"></script>
+</head>
+
+<body style="padding-top: 50px;">
+<nav class="navbar navbar-default" style="margin-bottom: 0; position: fixed; top: 0; left: 0;right: 0;z-index: 2;">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" style="color:olivedrab; font-weight: bolder;">ShaunBlog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/admin">CMS <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">GitHub</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/?category=593767acfb90d52d1806d3fd">Html</a></li>
+                        <li><a href="/?category=59376b20cf91702e68ee21a2">CSS</a></li>
+                        <li><a href="/?category=59376b15cf91702e68ee21a1">JavaScript</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/?category=59376b2ecf91702e68ee21a4">NodeJS</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/?category=59376b28cf91702e68ee21a3">jQuery</a></li>
+                        <li><a href="/?category=59390f9164fc6c06b052b908">VueJS</a></li>
+                        <li><a href="/?category=59390fa364fc6c06b052b909">AngularJS</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/?category=59390fad64fc6c06b052b90a">WebPack</a></li>
+                        <li><a href="/?category=59390fd064fc6c06b052b90b">Express</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://www.shaun.win/">ShaunTea</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pros <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://www.shaun.win/sc/">采茶 Vue</a></li>
+                        <li><a href="http://www.shaun.win/resume/">简历 SPA</a></li>
+                        <li><a href="http://www.shaun.win/weather/">天气 jQuery</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="http://www.shaun.win/sign.html">注册 Angular</a></li>
+                    </ul>
+                </li>
+
+
+                {% if userInfo._id %}
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i>{{userInfo.username}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="btn btn-secondary" href="####" id="logoutBtn2">退出</a></li>
+
+                    </ul>
+                </li>
+                {%else%}
+                <li><a class="btn btn-secondary" href="#loginBox" role="button"><i class="fa fa-spinner fa-spin fa-fw"></i> LogIn</a></li>
+                {%endif%}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="header">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 logo-div">
+                    <div class="logo-inner text-center">
+                        <div class="logo-name">
+                            <a href="index.html">
+                                <img src="/public/images/me.jpg" class="img-circle" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 header-text-top " id="about">
+                    <h1>Just call me Shaun! </h1> This blog is record all my life and stories. Here you can write a general notes about my blog.
+                    <br />
+                    <h2><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><strong>&nbsp&nbsp&nbspShow me your IDEA</strong></h2>
+                    <i>about everything or NOTHING!</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END HEADER SECTION-->
+<div class="info-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                Say hello to me at <strong>&nbsp<a href="mailto:shaun.wang@hotmail.com">shaun.wang@hotmail.com</a></strong>
+            </div>
+            <div class="col-md-3">
+                <div class="social-link">
+                    <a href="https://github.com/shaunfox/" class="btn btn-default btn-xs"><i class="fa fa-github fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/%E9%9C%84-%E7%8E%8B-581384a1/" class="btn btn-default btn-xs"><i class="fa fa-linkedin fa-2x"></i></a>
+                    <a href="http://www.shaun.win/" class="btn btn-default btn-xs"><i class="fa fa-twitter fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyrights">Made By Shaun Wang &nbsp <a href="http://www.shaun.win/" title="ShaunTea">&nbsp  ShaunTea</a></div>
+<!--END INFO SECTION-->
+<div class="container">
+    <div class="row">
+        {%block content%}{%endblock%}
+
+        <div class="col-md-1"></div>
+        <div class="col-md-3" style="padding-top: 30px;">
+            {% if userInfo._id %}
+            <div class="row logSection" id="userInfo">
+                <h3><i class="fa fa-vcard-o fa-5x"></i></h3>
+                <hr>
+                <p class="signup-item"><span class="username">{{userInfo.username}}</span></p>
+                <hr> {% if userInfo.isAdmin %}
+                <p class="signup-item"><span class="info">As your wish,  Your Majesty.</span>
+                <p><a href="/admin">Content Manage System</a></p>
+                </p>
+                {% else %}
+                <p class="signup-item"><span class="info">欢迎登陆ShaunBlog！请畅所欲言！</span></p>
+                {% endif %}
+                <p class="signup-item">
+                    <a class="btn btn-default btn-lg" href="####" id="logoutBtn">退出</a>
+                </p>
+                <hr>
+            </div>
+            {% else %}
+            <div class="row logSection" id="loginBox">
+                <h3><i class="fa fa-user-circle fa-5x"></i></h3>
+                <hr>
+                <p class="signup-item"><span class="signup-title"></span>
+                    <input name="username" type="text" placeholder="用户名">
+                </p>
+                <p class="signup-item"><span class="signup-title"></span>
+                    <input name="password" type="password" placeholder="密码">
+                </p>
+                <p class="signup-item">
+                    <button class="btn btn-primary btn-lg">登录</button>
+                </p>
+                <p class="colWarning"></p>
+                <p class="signup-item">还没注册？ <a href="####" class="colMint">马上注册</a></p>
+                <hr>
+            </div>
+            <div class="row logSection" id="registerBox" style="display: none;">
+                <h3><i class="fa fa-user-plus fa-5x"></i></h3>
+                <hr>
+                <p class="signup-item"><span class="signup-title"></span>
+                    <input name="username" placeholder="用户名" type="text">
+                </p>
+                <p class="signup-item"><span class="signup-title"></span>
+                    <input name="password" placeholder="密码" type="password">
+                </p>
+                <p class="signup-item"><span class="signup-title"></span>
+                    <input name="repassword" placeholder="密码确认" type="password">
+                </p>
+                <p class="signup-item">
+                    <button>注册</button>
+                </p>
+                <p class="colWarning"></p>
+                <p class="signup-item">已有账号？ <a href="####" class="colMint">登录</a></p>
+                <hr>
+            </div>
+            {% endif %}
+
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-item"><a class="btn btn-secondary" href="/"><h1>ShaunBlog</h1></a></li>
+                    {%if category==''%}
+                    <li class="list-group-item list-group-item-success"><strong>CATEGORIES</strong></li>
+
+                    {%else%}
+                    <li class="list-group-item"><strong>CATEGORIES</strong></li>
+
+                    {%endif%}
+
+                    {%for Category in categories%}
+                    {%if category==Category.id%}
+                    <li class="list-group-item list-group-item-success"><a href="/?category={{Category.id}}" class="btn btn-secondary btn-lg">{{Category.name}}</a></li>
+
+                    {%else%}
+                    <li class="list-group-item"><a href="/?category={{Category.id}}" class="btn btn-secondary btn-lg">{{Category.name}}</a></li>
+
+                    {%endif%}
+                    {%endfor%}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--END HOME PAGE SECTION-->
+<div class="footer-sec" style="margin-top: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 foo-inner">
+                &copy; 2016 www.shaun.win &nbsp | &nbsp ShaunBlog &nbsp &nbsp 我的博客 || 学习生活 &nbsp &nbsp <a href="http://www.shaun.win/" title="ShaunTea">ShaunTea</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END FOOTER SECTION -->
+
+<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
+
+<!-- LogIn and SignUp transfer -->
+<script src="/public/js/index.js"></script>
+
+<script src="/public/js/comment.js"></script>
+</body>
+
+</html>

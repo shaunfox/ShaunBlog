@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Content Manage System || ShaunBlog" />
+    <meta name="author" content="Shaun" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>Content Manage System || ShaunBlog</title>
+    <!-- BOOTSTRAP CORE STYLE -->
+    <link href="/public/css/bootstrap-3.37.css" rel="stylesheet" />
+    <link href="/public/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <!-- FONT AWESOME ICON STYLE -->
+    <link href="/public/css/font-awesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- 导航条 -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/admin">Content Manage System</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/admin/user">用户管理<span class="sr-only">(current)</span></a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/category">分类首页</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/admin/category/add">添加分类</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">博客管理<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/blog">内容首页</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/admin/blog/add">添加博客</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">ShaunBlog<span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userInfo.username}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- 内容区 -->
+    <div class="container-fluid">
+        <!-- 巨幕 -->
+        <!-- <div class="jumbotron">
+            <h1>Hello, Shaun!</h1> 
+            <p><a class="btn btn-default btn-lg" href="####" role="button">Content Manage System</a></p>
+        </div> -->
+        {%block welcomeJumbotron%}{%endblock%}
+    </div>
+    <!-- JQUERY SCRIPTS -->
+    <script src="/public/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="/public/js/bootstrap-3.37.js"></script>
+</body>
+
+</html>

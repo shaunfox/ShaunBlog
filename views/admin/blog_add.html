@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block welcomeJumbotron %}
+<ol class="breadcrumb">
+    <li><a href="/">管理首页</a></li>
+    <li><span>博客列表</span></li>
+</ol>
+<h3>博客内容</h3>
+<form role="form" method="post">
+    <div class="form-group">
+        <label for="category">所属分类</label>
+        <select name="category" id="category" class="form-control input-lg">
+            {%for category in categories%}
+            <option value="{{category.id}}">{{category.name}}</option>
+            {%endfor%}
+        </select>
+    </div>
+    <div class="form-group has-warning has-feedback">
+        <label for="title">博客标题</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="请输入博客标题">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group">
+        <label for="description">简介—— 支持HTML代码解析</label>
+        <textarea cols="30" rows="3" type="text" class="form-control" id="description" name="description" placeholder="Description - support HTML code parsing"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="content">正文内容—— 支持HTML与MARKDOWN代码解析</label>
+        <textarea cols="30" rows="8" type="text" class="form-control" id="content" name="content" placeholder="Content - support for HTML and markdown code parsing"></textarea>
+
+    </div>
+    <button type="submit" class="btn btn-success btn-lg">提交</button>
+    <a class="btn btn-link btn-lg" href="http://www.markdown.cn/" target="_blank">Markdown-语法参考</a>
+</form>
+
+
+{% endblock %}

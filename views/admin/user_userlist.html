@@ -1,0 +1,34 @@
+<nav>
+    <ul class="pager">
+        <li class="previous"><a href="/admin/user?page={{page-1}}"><span aria-hidden="true">&larr;</span>上一页</a></li>
+        <li>一共有{{count}}条数据，每页显示{{limit}}条数据，一共{{pages}}页， 当前页为{{page}}</li>
+        <li class="next"><a href="/admin/user?page={{page+1}}">下一页<span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+
+<table class="table table-responsive table-hover table-striped ">
+    <tr>
+        <th>账户ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>是否是管理员</th>
+    </tr>
+
+    {% for user in users %}
+    <tr>
+        <td>{{ user._id.toString() }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+        <td>{%if user.isAdmin%}YES{%endif%}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+<nav>
+    <ul class="pager">
+        <li class="previous"><a href="/admin/user?page={{page-1}}"><span aria-hidden="true">&larr;</span>上一页</a></li>
+        <li>一共有{{count}}条数据，每页显示{{limit}}条数据，一共{{pages}}页， 当前页为{{page}}</li>
+        <li class="next"><a href="/admin/user?page={{page+1}}">下一页<span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>

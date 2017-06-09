@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block welcomeJumbotron %}
+<ol class="breadcrumb">
+    <li><a href="/">管理首页</a></li>
+    <li><span>博客编辑</span></li>
+</ol>
+
+<h3>博客编辑{{blog.name}}</h3>
+<form role="form" method="post">
+    <div class="form-group">
+        <label for="category">所属分类</label>
+        <select name="category" id="category" class="form-control input-lg">
+
+            {%for category in categories%}
+
+            {%if blog.category.toString()== category.id.toString()%}
+            <option selected value="{{category.id}}">{{category.name}}</option>
+            {%else%}
+            <option value="{{category.id}}">{{category.name}}</option>
+            {%endif%}
+            {%endfor%}
+
+        </select>
+    </div>
+    <div class="form-group has-warning has-feedback">
+        <label for="title">博客标题</label>
+        <input type="text" class="form-control" value="{{blog.title}}" id="title" name="title" placeholder="请输入博客标题">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group">
+        <label for="description">简介</label>
+        <textarea cols="30" rows="3" type="text" class="form-control" id="description" name="description" >{{blog.description}}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="content">正文内容</label>
+        <textarea cols="30" rows="10" type="text" class="form-control" id="content" name="content" >{{blog.content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-default btn-lg">提交</button>
+</form>
+
+
+{% endblock %}
