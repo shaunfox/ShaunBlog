@@ -48,3 +48,5 @@ Any inspiration, any idea, any progress！
 * 打开浏览器，转向  [localhost:8081](http://localhost:8081/ "Title")
 
 * DB中预设管理员账号：admin  密码123
+
+* 如有任何问题，请联系：`shaun.wang@hotmail.com`
