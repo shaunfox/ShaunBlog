@@ -1,5 +1,5 @@
 /**
- * Created by Shaun on 2017/6/5.
+ * Created by Shaun on 2016/10/5.
  */
 
 // load express module
@@ -60,7 +60,7 @@ router.get('/', function (req, res, next) {
         });
 
     }).then(function(blogs){
-        console.log(blogs);
+        // console.log(blogs);
         data.blogs = blogs;
         //
         // data.blogs = blogs;
@@ -75,7 +75,7 @@ router.get('/view', function (req, res) {
     Blog.findOne({
         _id:blogId
     }).then(function (blog) {
-        console.log(blog);
+        // console.log(blog);
         data.blog=blog;
         blog.clicks++;
         return blog.save();
